@@ -1,0 +1,19 @@
+[system]
+app_name  = xxx
+http_port = 8080
+gin_mode  = debug
+
+[redis]
+host         = 127.0.0.1:6379
+database     = 0
+max_idle     = 10
+max_active   = 10240
+idle_timeout = 240
+timeout      = 20
+
+[mysql]
+username = ""
+password = ""
+dbHost   = ""
+dbName   = ""
+dbPrefix = ""
