@@ -30,14 +30,7 @@ func init() {
 }
 
 func SetupRouter() *gin.Engine {
-
 	Router.StaticFile("favicon.ico", utils.RootPath+"/favicon.ico")
-
-	Router.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "helloweb",
-		})
-	})
 
 	Router.NoRoute(func(c *gin.Context) {
 		code := http.StatusNotFound
@@ -45,6 +38,12 @@ func SetupRouter() *gin.Engine {
 			"code":    code,
 			"message": http.StatusText(code),
 			"data":    gin.H{},
+		})
+	})
+
+	Router.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"message": "helloweb",
 		})
 	})
 
